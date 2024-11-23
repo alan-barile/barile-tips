@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+  get "concreto_tabela_telas/index"
+  
+  get "/taxaArmacao" => "concreto_taxa_armacao#index"
+  get "/tabelaTelas" => "concreto_tabela_telas#index"
   get "home/index"
+  
   
   root "home#index"
   

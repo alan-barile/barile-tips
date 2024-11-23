@@ -2,6 +2,5 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-//= require jquery
-//= require jquery_ujs
-//= require bootstrap_sb_admin_base_v2
+import "./jquery"
+import * as bootstrap from "bootsrap"
