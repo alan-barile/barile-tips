@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/tabelaTelas" => "concreto_tabela_telas#index"
   get "/tabelaPerfilLaminado" => "aco_tabela_perfil_laminado#index"
   get "/tabelaChapaDobrada" => "aco_tabela_chapa_dobrada#index"
+  get "/sugestoesLivros" => "sugestoes_livros#index"
+  get "/comparacaoArmacao" => "concreto_comparacao_armacao#index"
   
   get "home/index"
   

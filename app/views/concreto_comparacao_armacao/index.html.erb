@@ -1,0 +1,168 @@
+<script type="text/javascript">
+function calculaArmacao(idQuantidade, idBitola, idArmacao) {
+	txtQuantidade = document.getElementById(idQuantidade);
+	cmbBitola = document.getElementById(idBitola);
+	txtArmacao = document.getElementById(idArmacao);
+	
+	if(txtQuantidade.value.length == 0) {
+		quantidade = 0;
+	} else { 
+		quantidade = txtQuantidade.value;
+	}
+	
+	bitola = cmbBitola.value;
+	area = (3.14*(bitola/10.0)**2.0)/4.0;
+	
+	txtArmacao.value = (quantidade*area).toFixed(2);
+}
+
+function calculaTaxaArmacao(idBitola, idEspacamento, idTaxa) {
+	cmbBitola = document.getElementById(idBitola);
+	txtEspacamento = document.getElementById(idEspacamento);
+	txtTaxa = document.getElementById(idTaxa);
+	
+	if(txtEspacamento.value.length == 0) {
+		espacamento = 0;
+	} else { 
+		espacamento = txtEspacamento.value;
+	}
+	
+	bitola = cmbBitola.value;
+	area = (3.14*(bitola/10.0)**2.0)/4.0;
+	
+	if(espacamento != 0) {
+		txtTaxa.value = ((100*area)/espacamento).toFixed(2);
+	} else {
+		txtTaxa.value = "";
+	}
+}
+</script>
+
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Comparação entre Armações</h6>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-10">
+			<!-- Basic Card Example -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Quantidade e Bitola</h6>
+				</div>
+				<div class="card-body">
+					 <div class="form-group row">
+						<label class="col-sm-2">Antiga</label>
+						<label class="col-sm-auto">Quantidade</label>
+						<div class="col-sm-1">
+						  <input type="text" class="form-control" id="txtAntigaQuantidade" onfocusout="calculaArmacao('txtAntigaQuantidade','cmbAntigaBitola','txtAntigaArmacao')">
+						</div>
+						<label class="col-sm-auto">Bitola (mm)</label>
+						<div class="col-sm-2">
+						  <select id="cmbAntigaBitola" class="form-control" onchange="calculaArmacao('txtAntigaQuantidade','cmbAntigaBitola','txtAntigaArmacao')">
+							<option selected>6.3</option>
+							<option>8</option>
+							<option>10</option>
+							<option>12.5</option>
+							<option>16</option>
+							<option>20</option>
+							<option>25</option>
+						  </select>
+						</div>
+						<label class="col-sm-auto">Armação (cm2)</label>
+						<div class="col-sm-2">
+						  <input type="text" class="form-control" id="txtAntigaArmacao">
+						</div>
+					 </div>
+					 
+					 <div class="form-group row">
+						<label class="col-sm-2">Nova</label>
+						<label class="col-sm-auto">Quantidade</label>
+						<div class="col-sm-1">
+						  <input type="text" class="form-control" id="txtNovaQuantidade" onfocusout="calculaArmacao('txtNovaQuantidade','cmbNovaBitola','txtNovaArmacao')">
+						</div>
+						<label class="col-sm-auto">Bitola (mm)</label>
+						<div class="col-sm-2">
+						  <select id="cmbNovaBitola" class="form-control" onchange="calculaArmacao('txtNovaQuantidade','cmbNovaBitola','txtNovaArmacao')">
+							<option selected>6.3</option>
+							<option>8</option>
+							<option>10</option>
+							<option>12.5</option>
+							<option>16</option>
+							<option>20</option>
+							<option>25</option>
+						  </select>
+						</div>
+						<label class="col-sm-auto">Armação (cm2)</label>
+						<div class="col-sm-2">
+						  <input type="text" class="form-control" id="txtNovaArmacao">
+						</div>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-10">
+			<!-- Basic Card Example -->
+			<div class="card shadow mb-4">
+				<div class="card-header py-3">
+					<h6 class="m-0 font-weight-bold text-primary">Bitola e Espaçamento</h6>
+				</div>
+				<div class="card-body">
+					 <div class="form-group row">
+						<label class="col-sm-1">Antiga</label>
+						<label class="col-sm-auto">Bitola (mm)</label>
+						<div class="col-sm-2">
+						   <select id="cmbAntigaTaxaBitola" class="form-control" onchange="calculaTaxaArmacao('cmbAntigaTaxaBitola','txtAntigaTaxaEspacamento','txtAntigaTaxaArmacao')">
+							<option selected>6.3</option>
+							<option>8</option>
+							<option>10</option>
+							<option>12.5</option>
+							<option>16</option>
+							<option>20</option>
+							<option>25</option>
+						  </select>
+						</div>
+						<label class="col-sm-auto">Espaçamento (cm)</label>
+						<div class="col-sm-1">
+						  <input type="text" class="form-control" id="txtAntigaTaxaEspacamento" onfocusout="calculaTaxaArmacao('cmbAntigaTaxaBitola','txtAntigaTaxaEspacamento','txtAntigaTaxaArmacao')">
+						 
+						</div>
+						<label class="col-sm-2">Taxa (cm2/m)</label>
+						<div class="col-sm-2">
+						  <input type="text" class="form-control" id="txtAntigaTaxaArmacao">
+						</div>
+					 </div>
+					 
+					 <div class="form-group row">
+						<label class="col-sm-1">Nova</label>
+						<label class="col-sm-auto">Bitola (mm)</label>
+						<div class="col-sm-2">
+						  <select id="cmbNovaTaxaBitola" class="form-control" onchange="calculaTaxaArmacao('cmbNovaTaxaBitola','txtNovaTaxaEspacamento','txtNovaTaxaArmacao')">
+							<option selected>6.3</option>
+							<option>8</option>
+							<option>10</option>
+							<option>12.5</option>
+							<option>16</option>
+							<option>20</option>
+							<option>25</option>
+						  </select>
+						</div>
+						<label class="col-sm-auto">Espaçamento (cm)</label>
+						<div class="col-sm-1">
+						  <input type="text" class="form-control" id="txtNovaTaxaEspacamento" onfocusout="calculaTaxaArmacao('cmbNovaTaxaBitola','txtNovaTaxaEspacamento','txtNovaTaxaArmacao')">
+						  
+						</div>
+						<label class="col-sm-2">Taxa (cm2/m)</label>
+						<div class="col-sm-2">
+						  <input type="text" class="form-control" id="txtNovaTaxaArmacao">
+						</div>
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,52 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+	<div class="card-header py-3">
+		<h6 class="m-0 font-weight-bold text-primary">Sugestões de Livros</h6>
+	</div>
+	
+	 <div class="card mb-4 py-3 border-left-secondary">
+		<h6 class="m-0 font-weight-bold text-primary">Concreto Armado</h6>
+		<% @livrosConcreto.each do |item| %>
+			<p class="mb-1">
+				<%= item[1] %>, <%= item[2] %>, <%= item[3] %> Edição, <%= item[4] %>, <%= item[5] %>
+			</p>
+		<% end %>
+	</div>
+	
+	 <div class="card mb-4 py-3 border-left-secondary">
+		<h6 class="m-0 font-weight-bold text-primary">Estruturas Metálicas</h6>
+		<% @livrosEstruturasMetalicas.each do |item| %>
+			<p class="mb-1">
+				<%= item[1] %>, <%= item[2] %>, <%= item[3] %> Edição, <%= item[4] %>, <%= item[5] %>
+			</p>
+		<% end %>
+	</div>
+	
+	 <div class="card mb-4 py-3 border-left-secondary">
+		<h6 class="m-0 font-weight-bold text-primary">Fundações</h6>
+		<% @livrosFundacoes.each do |item| %>
+			<p class="mb-1">
+				<%= item[1] %>, <%= item[2] %>, <%= item[3] %> Edição, <%= item[4] %>, <%= item[5] %>
+			</p>
+		<% end %>
+	</div>
+	
+	 <div class="card mb-4 py-3 border-left-secondary">
+		<h6 class="m-0 font-weight-bold text-primary">Alvenaria Estrutural</h6>
+		<% @livrosAlvenariaEstrutural.each do |item| %>
+			<p class="mb-1">
+				<%= item[1] %>, <%= item[2] %>, <%= item[3] %> Edição, <%= item[4] %>, <%= item[5] %>
+			</p>
+		<% end %>
+	</div>
+	
+	 <div class="card mb-4 py-3 border-left-secondary">
+		<h6 class="m-0 font-weight-bold text-primary">Outros</h6>
+		<% @livrosOutros.each do |item| %>
+			<p class="mb-4">
+				<%= item[1] %>, <%= item[2] %>, <%= item[4] %>, <%= item[5] %>
+			</p>
+		<% end %>
+	</div>
+		
+</div>
