@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get "concreto_tabela_telas/index"
-  
   get "/taxaArmacao" => "concreto_taxa_armacao#index"
   get "/tabelaTelas" => "concreto_tabela_telas#index"
+  get "/tabelaPerfilLaminado" => "aco_tabela_perfil_laminado#index"
+  get "/tabelaChapaDobrada" => "aco_tabela_chapa_dobrada#index"
+  
   get "home/index"
   
   

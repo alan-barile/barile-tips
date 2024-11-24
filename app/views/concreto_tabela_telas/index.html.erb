@@ -9,7 +9,7 @@
 			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 				<thead>
 					<tr>
-						<% for i in 0..6 do %>
+						<% for i in 0..7 do %>
 							<th><%= @cabecalho[i] %></th>
 						<% end %>
 					</tr>
@@ -18,7 +18,7 @@
 				<tbody>
 						<% @tabela_telas.each do |item| %>
 						<tr>
-							<% for i in 0..6 do %>
+							<% for i in 0..7 do %>
 								<th><%= item[i] %></th>
 							<% end %>
 						</tr>

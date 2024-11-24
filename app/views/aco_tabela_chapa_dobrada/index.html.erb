@@ -1,0 +1,58 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+		<nav class="navbar navbar-expand navbar-light bg-light mb-4">
+			<h6 class="m-0 font-weight-bold text-primary">Tabela de Chapa Dobrada</h6>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						Tipo de Perfil
+					</a>
+					<div class="dropdown-menu dropdown-menu-right animated--grow-in"
+						aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/tabelaChapaDobrada?tipoPerfil=1">Cantoneira</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="/tabelaChapaDobrada?tipoPerfil=2">U Simples</a>
+						<a class="dropdown-item" href="/tabelaChapaDobrada?tipoPerfil=3">U Enrijecido</a>
+					</div>
+				</li>
+			</ul>
+			
+		</nav>
+			
+	<div class="card-body">
+		<div style="text-align:center">
+			<% if @tipoPerfil == "1" %> 
+				<%= image_tag "perfil_Cantoneira.PNG" %>
+			<% elsif @tipoPerfil == "2" %> 
+				<%= image_tag "perfil_Usimples.PNG" %>
+			<% else %>
+				<%= image_tag "perfil_Uenrijecido.PNG" %>
+			<% end %>
+		</div>
+		<div name="" class="table-responsive">
+			<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+				<thead>
+					<tr>
+						<% for i in 0..@numTotal do %>
+							<th><%= (@cabecalho[i].gsub("@", "<br />")).html_safe %>
+							
+						<% end %>
+					</tr>
+				</thead>
+						<% @tabela_telas.each do |item| %>
+						<tr>
+							<% for i in 0..@numTotal do %>
+								<th><%= (item[i]) %></th>
+							<% end %>
+						</tr>
+						<% end %>
+				<tbody>
+						
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
