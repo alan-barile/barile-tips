@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/tabelaChapaDobrada" => "aco_tabela_chapa_dobrada#index"
   get "/sugestoesLivros" => "sugestoes_livros#index"
   get "/comparacaoArmacao" => "concreto_comparacao_armacao#index"
+  get "/comprimentoAncoragem" => "concreto_comprimento_ancoragem#index"
   
   get "home/index"
   
